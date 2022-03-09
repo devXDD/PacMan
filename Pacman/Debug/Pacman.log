@@ -1,0 +1,40 @@
+﻿  Avatar.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Avatar.cpp(17,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Avatar.cpp(17,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  BigDot.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Cherry.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Dot.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Drawer.cpp
+  GameEntity.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Ghost.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Ghost.cpp(72,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Ghost.cpp(72,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  MovableGameEntity.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\MovableGameEntity.cpp(6,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\MovableGameEntity.cpp(7,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Pacman.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Pacman.cpp(132,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Pacman.cpp(133,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  PathmapTile.cpp
+  StaticGameEntity.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Vector2f.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  World.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\Vector2f.h(72,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\World.cpp(65,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\World.cpp(65,35): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\World.cpp(92,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\World.cpp(92,41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Generating Code...
+  Pacman.vcxproj -> C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Debug\Pacman.exe
