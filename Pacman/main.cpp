@@ -44,6 +44,10 @@ int main(int argc, char **argv)
 
 		if (!pacman->Update(elapsedTime))
 			break;
+		if (event.type == SDL_QUIT)
+		{
+			break;
+		}
 
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
@@ -61,8 +65,8 @@ int main(int argc, char **argv)
 
 	TTF_Quit();
 	IMG_Quit();
+	SDL_DestroyWindow(window);
 	SDL_Quit( );
-
 	return 0;
 }
 

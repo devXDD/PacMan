@@ -1,8 +1,6 @@
 #ifndef VECTOR2F_H
 #define VECTOR2F_H
-
 #include <math.h> 
-
 class Vector2f
 {
 public:

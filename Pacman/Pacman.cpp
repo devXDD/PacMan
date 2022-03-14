@@ -19,35 +19,23 @@ Pacman* Pacman::Create(Drawer* aDrawer)
 		delete pacman;
 		pacman = NULL;
 	}
-
 	return pacman;
 }
-
-Pacman::Pacman(Drawer* aDrawer)
-: myDrawer(aDrawer)
-, myTimeToNextUpdate(0.f)
-, myNextMovement(-1.f,0.f)
-, myScore(0)
-, myFps(0)
-, myLives(3)
-, myGhostGhostCounter(0.f)
+Pacman::Pacman(Drawer* aDrawer): myDrawer(aDrawer), myTimeToNextUpdate(0.f), myNextMovement(-1.f,0.f), myScore(0), myFps(0), myLives(3), myGhostGhostCounter(0.f)
 {
 	myAvatar = new Avatar(Vector2f(13*22,22*22));
 	myGhost = new Ghost(Vector2f(13*22,13*22));
 	myWorld = new World();
 }
-
 Pacman::~Pacman(void)
 {
 }
-
 bool Pacman::Init()
 {
 	myWorld->Init();
 
 	return true;
 }
-
 bool Pacman::Update(float aTime)
 {
 	if (!UpdateInput())

@@ -16,9 +16,7 @@ Drawer* Drawer::Create(SDL_Window* aWindow, SDL_Renderer* aRenderer)
 	return drawer;
 }
 
-Drawer::Drawer(SDL_Window* aWindow, SDL_Renderer* aRenderer)
-: myWindow(aWindow)
-, myRenderer(aRenderer)
+Drawer::Drawer(SDL_Window* aWindow, SDL_Renderer* aRenderer): myWindow(aWindow), myRenderer(aRenderer)
 {
 }
 
@@ -36,28 +34,24 @@ bool Drawer::Init()
 
 void Drawer::Draw(const char* anImage, int aCellX, int aCellY)
 {
-	SDL_Surface* surface = IMG_Load( anImage ) ;
-
+	SDL_Surface* surface = IMG_Load(	anImage);
 	if (!surface)
 		return;
-
 	SDL_Texture* optimizedSurface = SDL_CreateTextureFromSurface(myRenderer, surface);
-
     SDL_Rect sizeRect;
     sizeRect.x = 0 ;
     sizeRect.y = 0 ;
     sizeRect.w = surface->w ;
     sizeRect.h = surface->h ;
-
     SDL_Rect posRect ;
     posRect.x = aCellX;
     posRect.y = aCellY;
 	posRect.w = sizeRect.w;
 	posRect.h = sizeRect.h;
-
-	SDL_RenderCopy(myRenderer, optimizedSurface, &sizeRect, &posRect);	
+	SDL_RenderCopy(myRenderer, optimizedSurface, &sizeRect, &posRect);
+	SDL_DestroyTexture(optimizedSurface);
+	SDL_FreeSurface(surface);
 }
-
 void Drawer::DrawText(const char* aText, const char* aFontFile, int aX, int aY)
 {
 	TTF_Font* font=TTF_OpenFont(aFontFile, 24);

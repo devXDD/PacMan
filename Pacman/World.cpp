@@ -3,27 +3,22 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-
 #include "PathmapTile.h"
 #include "Dot.h"
 #include "BigDot.h"
 #include "Drawer.h"
-
 World::World(void)
 {
 }
-
 World::~World(void)
 {
 }
-
 void World::Init()
 {
 	InitPathmap();
 	InitDots();
 	InitBigDots();
 }
-
 bool World::InitPathmap()
 {
 	std::string line;
@@ -44,10 +39,8 @@ bool World::InitPathmap()
 		}
 		myfile.close();
 	}
-
 	return true;
 }
-
 bool World::InitDots()
 {
 	std::string line;
@@ -71,10 +64,8 @@ bool World::InitDots()
 		}
 		myfile.close();
 	}
-
 	return true;
 }
-
 bool World::InitBigDots()
 {
 	std::string line;
@@ -93,7 +84,6 @@ bool World::InitBigDots()
 					myBigDots.push_back(dot);
 				}
 			}
-
 			lineIndex++;
 		}
 		myfile.close();
@@ -131,7 +121,6 @@ bool World::TileIsValid(int anX, int anY)
 
 	return false;
 }
-
 bool World::HasIntersectedDot(const Vector2f& aPosition)
 {
 	for(std::list<Dot*>::iterator list_iter = myDots.begin(); list_iter != myDots.end(); list_iter++)
@@ -144,7 +133,6 @@ bool World::HasIntersectedDot(const Vector2f& aPosition)
 			return true;
 		}
 	}
-
 	return false;
 }
 
@@ -207,7 +195,6 @@ bool World::ListDoesNotContain(PathmapTile* aFromTile, std::list<PathmapTile*>& 
 			return false;
 		}
 	}
-
 	return true;
 }
 

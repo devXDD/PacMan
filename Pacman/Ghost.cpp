@@ -8,30 +8,24 @@ Ghost::Ghost(const Vector2f& aPosition)
 {
 	myIsClaimableFlag = false;
 	myIsDeadFlag = false;
-
 	myDesiredMovementX = 0;
 	myDesiredMovementY = -1;
 }
-
 Ghost::~Ghost(void)
 {
 }
-
 void Ghost::Die(World* aWorld)
 {
 	myPath.clear();
 	aWorld->GetPath(myCurrentTileX, myCurrentTileY, 13, 13, myPath);
 }
-
 void Ghost::Update(float aTime, World* aWorld)
 {
 	float speed = 30.f;
 	int nextTileX = GetCurrentTileX() + myDesiredMovementX;
 	int nextTileY = GetCurrentTileY() + myDesiredMovementY;
-
 	if (myIsDeadFlag)
 		speed = 120.f;
-
 	if (IsAtDestination())
 	{
 		if (!myPath.empty())
@@ -63,17 +57,13 @@ void Ghost::Update(float aTime, World* aWorld)
 				myDesiredMovementX = 1;
 				myDesiredMovementY = 0;
 			}
-
 			myIsDeadFlag = false;
 		}
 	}
-
 	int tileSize = 22;
 	Vector2f destination(myNextTileX * tileSize, myNextTileY * tileSize);
 	Vector2f direction = destination - myPosition;
-
 	float distanceToMove = aTime * speed;
-
 	if (distanceToMove > direction.Length())
 	{
 		myPosition = destination;
@@ -86,12 +76,10 @@ void Ghost::Update(float aTime, World* aWorld)
 		myPosition += direction * distanceToMove;
 	}
 }
-
 void Ghost::SetImage(const char* anImage)
 {
 	myImage = anImage;
 }
-
 void Ghost::Draw(Drawer* aDrawer)
 {
 	if (myIsDeadFlag)
