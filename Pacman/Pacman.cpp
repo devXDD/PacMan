@@ -96,6 +96,11 @@ bool Pacman::Update(float aTime)
 	return true;
 }
 
+Vector2f Pacman::GetNextMovement()
+{
+	return myNextMovement;
+}
+
 bool Pacman::UpdateInput()
 {
 	const Uint8 *keystate = SDL_GetKeyboardState(NULL);

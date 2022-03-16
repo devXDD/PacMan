@@ -38,6 +38,7 @@ void Drawer::Draw(const char* anImage, int aCellX, int aCellY)
 	if (!surface)
 		return;
 	SDL_Texture* optimizedSurface = SDL_CreateTextureFromSurface(myRenderer, surface);
+	SDL_FreeSurface(surface);
     SDL_Rect sizeRect;
     sizeRect.x = 0 ;
     sizeRect.y = 0 ;
@@ -50,7 +51,7 @@ void Drawer::Draw(const char* anImage, int aCellX, int aCellY)
 	posRect.h = sizeRect.h;
 	SDL_RenderCopy(myRenderer, optimizedSurface, &sizeRect, &posRect);
 	SDL_DestroyTexture(optimizedSurface);
-	SDL_FreeSurface(surface);
+	
 }
 void Drawer::DrawText(const char* aText, const char* aFontFile, int aX, int aY)
 {

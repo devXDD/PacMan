@@ -5,6 +5,7 @@ Avatar::Avatar(const Vector2f& aPosition)
 }
 Avatar::~Avatar(void)
 {
+
 }
 void Avatar::Update(float aTime)
 {

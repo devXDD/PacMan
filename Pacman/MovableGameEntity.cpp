@@ -1,7 +1,6 @@
 #include "MovableGameEntity.h"
 
-MovableGameEntity::MovableGameEntity(const Vector2f& aPosition, const char* anImage)
-: GameEntity(aPosition, anImage)
+MovableGameEntity::MovableGameEntity(const Vector2f& aPosition, const char* anImage): GameEntity(aPosition, anImage)
 {
 	myCurrentTileX = myNextTileX =  myPosition.myX / 22;
 	myCurrentTileY = myNextTileY =  myPosition.myY / 22;

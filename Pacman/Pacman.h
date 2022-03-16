@@ -13,6 +13,9 @@ public:
 	~Pacman(void);
 	bool Update(float aTime);
 	bool Draw();
+	Vector2f myNextMovement;
+	Vector2f GetNextMovement();
+
 private:
 	Pacman(Drawer* aDrawer);
 	bool Init();
@@ -25,7 +28,7 @@ private:
 	int myLives;
 	int myScore;
 	int myFps;
-	Vector2f myNextMovement;
+	
 	Avatar* myAvatar;
 	Ghost* myGhost;
 	World* myWorld;
