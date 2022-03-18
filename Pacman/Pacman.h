@@ -16,6 +16,9 @@ public:
 	Vector2f myNextMovement;
 	Vector2f GetNextMovement();
 
+	bool shouldUpdate();
+	bool shouldUp;
+
 private:
 	Pacman(Drawer* aDrawer);
 	bool Init();

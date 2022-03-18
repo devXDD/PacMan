@@ -96,6 +96,7 @@ bool Pacman::Update(float aTime)
 	return true;
 }
 
+
 Vector2f Pacman::GetNextMovement()
 {
 	return myNextMovement;
@@ -106,17 +107,30 @@ bool Pacman::UpdateInput()
 	const Uint8 *keystate = SDL_GetKeyboardState(NULL);
 
 	if (keystate[SDL_SCANCODE_UP])
+	{
 		myNextMovement = Vector2f(0.f, -1.f);
+		shouldUp = true;
+	}
 	else if (keystate[SDL_SCANCODE_DOWN])
+	{
 		myNextMovement = Vector2f(0.f, 1.f);
+		shouldUp = false;
+	}
 	else if (keystate[SDL_SCANCODE_RIGHT])
+	{
 		myNextMovement = Vector2f(1.f, 0.f);
+		shouldUp = false;
+	}
 	else if (keystate[SDL_SCANCODE_LEFT])
+	{
 		myNextMovement = Vector2f(-1.f, 0.f);
+		shouldUp = false;
+	}
 
 	if (keystate[SDL_SCANCODE_ESCAPE])
 		return false;
 
+	shouldUp = false;
 	return true;
 }
 
