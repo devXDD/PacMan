@@ -9,10 +9,8 @@
 
 int main(int argc, char** argv)
 {
-
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
-
 	/* initialize SDL */
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0)
 	{

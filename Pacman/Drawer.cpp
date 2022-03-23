@@ -37,28 +37,24 @@ bool Drawer::Init()
 
 void Drawer::Draw(std::string anImage, int aCellX, int aCellY)
 {
-	SDL_Surface* surfacee = AssetManager::Get().GetSurface(anImage);
-//	SDL_Surface* surfacee = IMG_Load(anImage);
-	if (!surfacee)
-	{ 
-		std::cout << "Surface not created: " << std::endl;
-		return;
-	}
-	
-	SDL_Texture* optimizedSurface = SDL_CreateTextureFromSurface(myRenderer, surfacee);
-	//SDL_FreeSurface(surfacee);
+	SDL_Texture* optimizedSurface = AssetManager::Get().GetSurface(anImage, myRenderer);
+	SDL_Surface* getSur = AssetManager::Get().GetSur(anImage, myRenderer);
+
+
 	SDL_Rect sizeRect;
 	sizeRect.x = 0;
 	sizeRect.y = 0;
-	sizeRect.w = surfacee->w;
-	sizeRect.h = surfacee->h;
+	sizeRect.w = getSur->w;
+	sizeRect.h = getSur->h;
+
 	SDL_Rect posRect;
 	posRect.x = aCellX;
 	posRect.y = aCellY;
 	posRect.w = sizeRect.w;
 	posRect.h = sizeRect.h;
+
 	SDL_RenderCopy(myRenderer, optimizedSurface, &sizeRect, &posRect);
-	SDL_DestroyTexture(optimizedSurface);
+	//SDL_DestroyTexture(optimizedSurface);
 
 }
 void Drawer::DrawText(const char* aText, const char* aFontFile, int aX, int aY)

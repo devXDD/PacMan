@@ -8,11 +8,13 @@
 class AssetManager {
 private:
     AssetManager();
-    std::unordered_map<std::string, SDL_Surface*> single_surface;
+    std::unordered_map<std::string, SDL_Texture*> single_surface;
+    std::unordered_map<std::string, SDL_Surface*> retrieve_sruface;
 
 public:
     static AssetManager& Get();
-    SDL_Surface* GetSurface(std::string filepath);
+    SDL_Texture* GetSurface(std::string filepath, SDL_Renderer* render);
+    SDL_Surface* GetSur(std::string filepath, SDL_Renderer* render);
 };
 
 
