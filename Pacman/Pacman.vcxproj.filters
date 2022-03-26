@@ -51,9 +51,6 @@
     <ClCompile Include="MovableGameEntity.cpp">
       <Filter>Game\Game entities\Movable</Filter>
     </ClCompile>
-    <ClCompile Include="PathmapTile.cpp">
-      <Filter>Game\World</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Game\World</Filter>
     </ClCompile>
@@ -69,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Game\Game entities</Filter>
+    </ClCompile>
+    <ClCompile Include="TextManager.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -99,9 +99,6 @@
     <ClInclude Include="MovableGameEntity.h">
       <Filter>Game\Game entities\Movable</Filter>
     </ClInclude>
-    <ClInclude Include="PathmapTile.h">
-      <Filter>Game\World</Filter>
-    </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Game\World</Filter>
     </ClInclude>
@@ -116,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Game\Game entities</Filter>
+    </ClInclude>
+    <ClInclude Include="TextManager.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

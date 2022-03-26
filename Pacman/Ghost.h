@@ -3,22 +3,18 @@
 
 #include <list>
 #include "MovableGameEntity.h"
-
-class World;
-class PathmapTile;
+#include "World.h"
 
 class Ghost : public MovableGameEntity
 {
 public:
-	Ghost(const Vector2f& aPosition);
+	Ghost(World& world, const Vector2f& aPosition);
 	~Ghost(void);
 
 	void Update(float aTime, World* aWorld);
 
 	bool myIsClaimableFlag;
 	bool myIsDeadFlag;
-
-	void SetImage(const char* anImage);
 
 	void Die(World* aWorld);
 
@@ -29,7 +25,7 @@ protected:
 	int myDesiredMovementX;
 	int myDesiredMovementY;
 
-	std::list<PathmapTile*> myPath;
+	std::list<Tile*> myPath;
 
 };
 

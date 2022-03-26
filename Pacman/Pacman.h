@@ -1,23 +1,27 @@
 #ifndef PACMAN_H
 #define PACMAN_H
+
 #include "Vector2f.h"
+
 struct SDL_Surface;
-class Drawer;
-class Avatar;
-class World;
-class Ghost;
+
+#include "Drawer.h"
+#include "Avatar.h"
+#include "World.h"
+#include "Ghost.h"
+
 class Pacman
 {
 public:
 	static Pacman* Create(Drawer* aDrawer);
+	Pacman();
 	~Pacman(void);
 	bool Update(float aTime);
 	bool Draw();
-	Vector2f myNextMovement;
-	Vector2f GetNextMovement();
 
-	bool shouldUpdate();
-	bool shouldUp;
+	double angle;
+
+	double GetAngle();
 
 private:
 	Pacman(Drawer* aDrawer);
@@ -31,6 +35,9 @@ private:
 	int myLives;
 	int myScore;
 	int myFps;
+
+	Vector2f desired_direction;
+	Vector2f direction;
 	
 	Avatar* myAvatar;
 	Ghost* myGhost;

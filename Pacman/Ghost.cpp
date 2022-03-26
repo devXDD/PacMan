@@ -1,10 +1,8 @@
 #include "Ghost.h"
 #include "World.h"
-#include "PathmapTile.h"
-#include "Drawer.h"
 
-Ghost::Ghost(const Vector2f& aPosition)
-: MovableGameEntity(aPosition, "ghost_32.png")
+Ghost::Ghost(World& world, const Vector2f& aPosition)
+	: MovableGameEntity(world, aPosition, std::vector<std::string>{"ghost_32.png"})
 {
 	myIsClaimableFlag = false;
 	myIsDeadFlag = false;
@@ -30,9 +28,9 @@ void Ghost::Update(float aTime, World* aWorld)
 	{
 		if (!myPath.empty())
 		{
-			PathmapTile* nextTile = myPath.front();
+			Tile* nextTile = myPath.front();
 			myPath.pop_front();
-			SetNextTile(nextTile->myX, nextTile->myY);
+			SetNextTile(nextTile->x, nextTile->y);
 		}
 		else if (aWorld->TileIsValid(nextTileX, nextTileY))
 		{
@@ -76,10 +74,7 @@ void Ghost::Update(float aTime, World* aWorld)
 		myPosition += direction * distanceToMove;
 	}
 }
-void Ghost::SetImage(const char* anImage)
-{
-	myImage = anImage;
-}
+
 void Ghost::Draw(Drawer* aDrawer)
 {
 	if (myIsDeadFlag)
@@ -87,5 +82,5 @@ void Ghost::Draw(Drawer* aDrawer)
 	else if (myIsClaimableFlag)
 		aDrawer->Draw("Ghost_Vulnerable_32.png", (int)myPosition.myX + 220, (int)myPosition.myY + 60);
 	else
-		aDrawer->Draw(myImage, (int)myPosition.myX + 220, (int)myPosition.myY + 60);
+		aDrawer->Draw(imgs.front(), (int)myPosition.myX + 220, (int)myPosition.myY + 60);
 }

@@ -1,9 +1,9 @@
 #include "GameEntity.h"
 #include "Drawer.h"
 
-GameEntity::GameEntity(const Vector2f& aPosition, const char* anImage)
+GameEntity::GameEntity(const Vector2f& aPosition, std::vector<std::string> imgs)
 :myPosition(aPosition)
-,myImage(anImage)
+,imgs(imgs)
 ,myIdMarkedForDeleteFlag(false)
 {
 }
@@ -20,5 +20,5 @@ bool GameEntity::Intersect(GameEntity* aGameEntity)
 
 void GameEntity::Draw(Drawer* aDrawer)
 {
-	aDrawer->Draw(myImage, (int)myPosition.myX + 220, (int)myPosition.myY + 60);
+	aDrawer->Draw(imgs.front(), (int)myPosition.myX + 220, (int)myPosition.myY + 60);
 }

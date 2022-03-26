@@ -7,10 +7,12 @@
 class Avatar : public MovableGameEntity
 {
 public:
-	Avatar(const Vector2f& aPosition);
+	Avatar(World& world, const Vector2f& aPosition);
 	~Avatar(void);
 
 	void Update(float aTime);
+
+	void Draw(Drawer* aDrawer);
 
 private:
 

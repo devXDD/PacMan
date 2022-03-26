@@ -1,2 +1,6 @@
-﻿  AssetManager.cpp
+﻿  MovableGameEntity.cpp
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\MovableGameEntity.cpp(5,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\MovableGameEntity.cpp(6,49): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\MovableGameEntity.cpp(27,36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Pacman\MovableGameEntity.cpp(32,36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Pacman.vcxproj -> C:\Users\Verbal\Downloads\68da786c-0585-48e8-a9e0-8c2fdcb78c23_Pacman Source Code\Pacman\Debug\Pacman.exe

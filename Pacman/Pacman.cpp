@@ -10,6 +10,11 @@
 #include "World.h"
 #include "Ghost.h"
 
+Pacman::Pacman()
+{
+
+}
+
 Pacman* Pacman::Create(Drawer* aDrawer)
 {
 	Pacman* pacman = new Pacman(aDrawer);
@@ -21,11 +26,11 @@ Pacman* Pacman::Create(Drawer* aDrawer)
 	}
 	return pacman;
 }
-Pacman::Pacman(Drawer* aDrawer): myDrawer(aDrawer), myTimeToNextUpdate(0.f), myNextMovement(-1.f,0.f), myScore(0), myFps(0), myLives(3), myGhostGhostCounter(0.f)
+Pacman::Pacman(Drawer* aDrawer): myDrawer(aDrawer), myTimeToNextUpdate(0.f), desired_direction(-1.f, 0.f), direction(-1.f,0.f), myScore(0), myFps(0), myLives(3), myGhostGhostCounter(0.f)
 {
-	myAvatar = new Avatar(Vector2f(13*22,22*22));
-	myGhost = new Ghost(Vector2f(13*22,13*22));
 	myWorld = new World();
+	myAvatar = new Avatar(*myWorld, Vector2f(13 * 22, 22 * 22));
+	myGhost = new Ghost(*myWorld, Vector2f(13 * 22, 13 * 22));
 }
 Pacman::~Pacman(void)
 {
@@ -97,54 +102,61 @@ bool Pacman::Update(float aTime)
 }
 
 
-Vector2f Pacman::GetNextMovement()
-{
-	return myNextMovement;
-}
-
 bool Pacman::UpdateInput()
 {
+	SDL_PumpEvents();
 	const Uint8 *keystate = SDL_GetKeyboardState(NULL);
+	
 
 	if (keystate[SDL_SCANCODE_UP])
 	{
-		myNextMovement = Vector2f(0.f, -1.f);
-		shouldUp = true;
+		desired_direction = Vector2f(0, -1);
 	}
 	else if (keystate[SDL_SCANCODE_DOWN])
 	{
-		myNextMovement = Vector2f(0.f, 1.f);
-		shouldUp = false;
+		desired_direction = Vector2f(0, 1);
 	}
 	else if (keystate[SDL_SCANCODE_RIGHT])
 	{
-		myNextMovement = Vector2f(1.f, 0.f);
-		shouldUp = false;
+		desired_direction = Vector2f(1, 0);
 	}
 	else if (keystate[SDL_SCANCODE_LEFT])
 	{
-		myNextMovement = Vector2f(-1.f, 0.f);
-		shouldUp = false;
+		desired_direction = Vector2f(-1, 0);
 	}
 
 	if (keystate[SDL_SCANCODE_ESCAPE])
 		return false;
 
-	shouldUp = false;
 	return true;
+}
+
+double Pacman::GetAngle()
+{
+	return angle;
 }
 
 void Pacman::MoveAvatar()
 {
-	int nextTileX = myAvatar->GetCurrentTileX() + myNextMovement.myX;
-	int nextTileY = myAvatar->GetCurrentTileY() + myNextMovement.myY;
-
 	if (myAvatar->IsAtDestination())
 	{
-		if (myWorld->TileIsValid(nextTileX, nextTileY))
-		{
-			myAvatar->SetNextTile(nextTileX, nextTileY);
+		int desired_NextTileX = myAvatar->GetCurrentTileX() + desired_direction.myX;
+		int desired_NextTileY = myAvatar->GetCurrentTileY() + desired_direction.myY;
+
+		if (myWorld->TileIsValid(desired_NextTileX, desired_NextTileY)) {
+			direction = desired_direction;
+			myAvatar->SetNextTile(desired_NextTileX, desired_NextTileY);
 		}
+		else {
+			int nextTileX = myAvatar->GetCurrentTileX() + direction.myX;
+			int nextTileY = myAvatar->GetCurrentTileY() + direction.myY;
+
+			if (myWorld->TileIsValid(nextTileX, nextTileY))
+			{
+				myAvatar->SetNextTile(nextTileX, nextTileY);
+			}
+		}
+
 	}
 }
 
